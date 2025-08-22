@@ -1,6 +1,6 @@
 # RBAC
 
-Postman collection:
+Postman collection link : https://shinde-ved124-6798386.postman.co/workspace/Vedanti-Shinde's-Workspace~24410a2d-f425-49df-893c-47e54358e738/collection/47817414-11fd1ebb-e792-4d42-994f-f4f813d3f490?action=share&creator=47817414
 
 1. POST /register (give name,email,password, role )
 

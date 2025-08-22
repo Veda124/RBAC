@@ -8,14 +8,14 @@ const generateToken = (userId: any) =>{
 
 export const signup = async (req: any,res: any) => {
 try {
-    const {name,email,password} = req.body;
+    const {name,email,password,role} = req.body;
 
     //check if user exists
     const userExists = await User.findOne({email});
     if (userExists) { return res.status(400).json({ message: 'User Already Exists' }); }
 
     //create new user
-        const user = await User.create({ name, email, password });
+        const user = await User.create({ name, email, password,role });
 
         //return token
         const token = generateToken(user._id);
@@ -29,7 +29,7 @@ try {
 
 export const login = async (req: any,res: any) => {
 try {
-     const { email, password } = req.body;
+     const { email, password,role } = req.body;
         //check if user exists
         const user = await User.findOne({ email });
         if (!user) { return res.status(400).json({ message: 'Invalid user' }); }
